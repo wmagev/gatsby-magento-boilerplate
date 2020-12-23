@@ -15,6 +15,15 @@ exports.createPages = ({ graphql, actions }) => {
                                     url_key
                                 }
                             }
+                        }                        
+                        allMagentoCategory {
+                            edges {
+                                node {
+                                    magento_id
+                                    url_key
+                                    url_path
+                                }
+                            }
                         }
                     }
                 `
@@ -33,6 +42,26 @@ exports.createPages = ({ graphql, actions }) => {
                         },
                     });
                 });
+
+                result.data.allMagentoCategory.edges.forEach(({ node }) => {
+                    createPage({
+                        path: `/${node.url_path}/`,
+                        component: path.resolve(`./src/pages/category.js`),
+                        context: {
+                            category_id: node.magento_id,
+                            url_key: node.url_key,
+                        },
+                    });
+ 
+                    // id is gatsby.js node id. we need to put magento_id there instead
+                    const dstCategory = {
+                        ...node,
+                        id: node.magento_id,
+                    };
+ 
+                    delete dstCategory.magento_id;
+                });
+
             })
         );
     });

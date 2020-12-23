@@ -1,12 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-const Product = data => {
-    console.log(data)
+const Product = ({
+    data: { magentoProduct: product }
+}) => {
     return (
-        <h2>Product Page</h2>
+        <>
+        { product && 
+            (
+                <div>{product.name}</div>
+            )
+        } 
+        </>       
     )
 }
+
+export default Product
 
 export const query = graphql`
     query ProductQuery($url_key: String) {
@@ -14,20 +23,6 @@ export const query = graphql`
             id
             sku
             name
-            description
-            small_image
-            image {
-                childImageSharp {
-                    fluid(maxWidth: 1024, maxHeight: 1024) {
-                        src
-                        srcSet
-                        sizes
-                        aspectRatio
-                        base64
-                    }
-                }
-            }
-
             categories {
                 id
                 name
