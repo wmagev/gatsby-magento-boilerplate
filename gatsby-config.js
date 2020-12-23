@@ -6,5 +6,12 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: "gatsby-source-magento2",
+      options: {
+        graphqlEndpoint: "http://tealium.loc:8888/graphql"
+      }
+    }
+  ],
 }
