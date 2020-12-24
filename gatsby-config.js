@@ -12,6 +12,26 @@ module.exports = {
       options: {
         graphqlEndpoint: "http://tealium.loc:8888/graphql"
       }
-    }
-  ],
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Available options and their defaults:
+        base64Width: 20,
+        forceBase64Format: `png`, // valid formats: png,jpg,webp
+        useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+        stripMetadata: true,
+        defaultQuality: 50,
+        failOnError: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+      
+      },
+    },
+    `gatsby-plugin-typography`,
+    `gatsby-plugin-fontawesome-css`
+  ],  
 }

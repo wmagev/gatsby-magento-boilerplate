@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
+import Layout from "../containers/layout"
 
 const Home = ({
   data: {
@@ -10,18 +11,8 @@ const Home = ({
   }
 }) => {
 
-  const sortCategoriesByLevel = items => {
-    var cates = []
-    items.map(({ node: item }) => {
-      cates[item.level] = [...cates[item.level], item]
-    })
-    console.log(cates)
-  }
-
-  sortCategoriesByLevel(categories)
-
   return (
-    <>
+    <Layout>
       { categories && categories.map(({node: item}) => {          
           return (
             <div key={item.id}>
@@ -32,7 +23,7 @@ const Home = ({
           )
         })
       }  
-    </>
+    </Layout>
   )
 }
 
