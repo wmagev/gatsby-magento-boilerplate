@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import MiniCart from "./MiniCart"
-import logo from "../../../images/logo.png"
+import logoSrc from "../../../images/logo.png"
 import { THEME_SETTING } from "../../../constants"
 
 const Body = () => {
@@ -10,7 +10,7 @@ const Body = () => {
             <SearchBoxWrapper>
                 <SearchBox placeholder="Search" />
             </SearchBoxWrapper>
-            <Logo src={logo} />
+            <Logo src={logoSrc} />
             <CallUs>
                 <span>
                     CALL US NOW
