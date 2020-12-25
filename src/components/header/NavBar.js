@@ -1,19 +1,27 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import { themeSetting } from "../../constants"
+import { useCategoryData } from "../../hooks/use-category-data"
 
 const NavBar = () => {
+
+    const categories = useCategoryData()
+
+    const renderNavItem = ({ node: item }) => {
+        return (
+            <NavBarItem key={item.magento_id}>
+                <Link to={item.url_path}>
+                    {item.name}
+                </Link>
+            </NavBarItem>
+        )
+    }
+
     return (
         <NavBarWrapper>
             <NavBarLinks>
-                <NavBarItem>Home</NavBarItem>
-                <NavBarItem>Kitchen</NavBarItem>
-                <NavBarItem>Living Room</NavBarItem>
-                <NavBarItem>Laundry</NavBarItem>
-                <NavBarItem>Small-Appliances</NavBarItem>
-                <NavBarItem>Electronics</NavBarItem>
-                <NavBarItem>Misc</NavBarItem>
-                <NavBarItem>Parts</NavBarItem>
+                { categories && categories.map( renderNavItem ) }
             </NavBarLinks>
         </NavBarWrapper>
     )
@@ -42,6 +50,11 @@ const NavBarItem = styled.li`
     text-transform: uppercase;
     &:hover {
         background: ${themeSetting.navBar.itemHoverBgColor};
+        cursor: pointer;
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
     }
 `
 
