@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-source-magento2",
       options: {
-        graphqlEndpoint: "http://tealium.loc:8888/graphql"
+        graphqlEndpoint: "http://demo-m2.bird.eu/graphql/graphql"
       }
     },
     {
