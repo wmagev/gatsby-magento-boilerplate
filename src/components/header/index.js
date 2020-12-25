@@ -4,7 +4,7 @@ import BusinessHours from "./BusinessHours"
 import HeaderLinksBar from "./HeaderLinksBar"
 import HeaderBody from "./Body"
 import HeaderNavBar from "./NavBar"
-import { themeSetting } from "../../constants"
+import { THEME_SETTING } from "../../constants"
 
 const Header = () => {
     return (
@@ -20,7 +20,7 @@ const Header = () => {
 }
 
 const HeaderWrapper = styled.div`
-    border-top: 3px solid ${themeSetting.color};
+    border-top: 3px solid ${THEME_SETTING.COLOR};
     border-bottom: 1px solid #f3f3f3;
 `
 

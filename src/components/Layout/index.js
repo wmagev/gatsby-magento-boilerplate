@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Header from "../Header"
 import Footer from "../Footer"
 import backgroundImage from "../../images/body-bg.gif"
-import { themeSetting } from "../../constants"
+import { THEME_SETTING } from "../../constants"
 
 const Layout = ({ children }) => {
     return (
@@ -25,7 +25,7 @@ const Container = styled.div`
     top: 0;
     left: 0;
     position: fixed;
-    font-family: ${ themeSetting.font };
+    font-family: ${ THEME_SETTING.FONT_FAMILY };
 `
 
 const ContainerBody = styled.div`

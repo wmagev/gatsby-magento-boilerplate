@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { themeSetting } from "../../constants"
+import { THEME_SETTING } from "../../constants"
 
 const HeaderLinksBar = () => {
     return (
@@ -17,7 +17,7 @@ const HeaderLinksBar = () => {
 }
 
 const HeaderLinksWrapper = styled.div`
-    color: ${ themeSetting.lightColor };
+    color: ${ THEME_SETTING.LIGHT_COLOR };
     padding: 8px 15px;
     font-weight: 600;
     letter-spacing: 0.025em;

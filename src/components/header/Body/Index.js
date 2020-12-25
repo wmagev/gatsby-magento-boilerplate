@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import MiniCart from "./MiniCart"
 import logo from "../../../images/logo.png"
-import { themeSetting } from "../../../constants"
+import { THEME_SETTING } from "../../../constants"
 
 const Body = () => {
     return (
@@ -26,7 +26,7 @@ const Body = () => {
 const BodyWrapper = styled.div`
     position: relative;
     text-align: center;
-    color: ${themeSetting.color};
+    color: ${THEME_SETTING.COLOR};
     font-size: 20px;
     padding: 0 15px;
     margin: 0;

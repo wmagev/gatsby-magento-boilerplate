@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { themeSetting } from "../../constants"
-import { useCategoryData } from "../../hooks/use-category-data"
+import { THEME_SETTING } from "../../../constants"
+import { useCategoryData } from "../../../hooks/use-category-data"
 
 const NavBar = () => {
 
@@ -28,7 +28,7 @@ const NavBar = () => {
 }
 
 const NavBarWrapper = styled.div`
-    background: ${themeSetting.navBar.bgColor};
+    background: ${THEME_SETTING.NAV_BAR.BG_COLOR};
     color: #fff;
     text-align: center;
 `
@@ -49,7 +49,7 @@ const NavBarItem = styled.li`
     text-align: left;
     text-transform: uppercase;
     &:hover {
-        background: ${themeSetting.navBar.itemHoverBgColor};
+        background: ${THEME_SETTING.NAV_BAR.ITEM_HOVER_BG_COLOR};
         cursor: pointer;
     }
     a {
