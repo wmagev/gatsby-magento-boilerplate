@@ -12,7 +12,8 @@ const BusinessHoursWrapper = styled.p`
     text-align: center;
     color: #fff;
     font-size: 20px;
-    margin: 5px 0 10px 0;
+    padding: 5px 0 10px 0;
+    margin: 0;
 `
 
 export default BusinessHours

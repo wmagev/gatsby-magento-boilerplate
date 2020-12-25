@@ -19,8 +19,7 @@ const Bottom = () => {
 }
 
 const BottomWrapper = styled.div`
-    background-color: ${THEME_SETTING.FOOTER.BOTTOM_BG_COLOR};
-    color: #fff;
+    background-color: ${THEME_SETTING.FOOTER.BOTTOM_BG_COLOR};    
     text-align: center;
     padding: 30px 0 35px;
 `

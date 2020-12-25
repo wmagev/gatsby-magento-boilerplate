@@ -21,11 +21,13 @@ export default Layout
 const Container = styled.div`
     background: url(${ backgroundImage });
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    font-family: ${ THEME_SETTING.FONT_FAMILY };
+    min-height: 100%;
+    height: fit-content;
+    font-family: ${ THEME_SETTING.FONT_FAMILY };    
+    input:focus, button:focus
+    {
+        outline: none;
+    }
 `
 
 const ContainerBody = styled.div`

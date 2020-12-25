@@ -49,7 +49,7 @@ const NavBarItem = styled.li`
     text-align: left;
     text-transform: uppercase;
     &:hover {
-        background: ${THEME_SETTING.NAV_BAR.ITEM_HOVER_BG_COLOR};
+        background: ${THEME_SETTING.HOVER_COLOR};
         cursor: pointer;
     }
     a {
