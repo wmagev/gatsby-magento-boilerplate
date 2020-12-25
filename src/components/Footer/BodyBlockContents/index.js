@@ -39,7 +39,7 @@ const NewsLetter = () => (
         <p>Get advance notice on pricing, sales <br/> and specials. Sign up to our email list today</p>
         <SubscribeForm >
             <SubscribeInput name="email" type="email" id="footer_newsletter" placeholder="Email Address" />
-            <SubscribeButton title="Subscribe" type="submit">Subscribe</SubscribeButton>
+            <SubscribeButton title="Subscribe" type="button">Subscribe</SubscribeButton>
         </SubscribeForm>
     </>
 )
