@@ -5,12 +5,17 @@ import logoSrc from "../../../images/logo.png"
 import { THEME_SETTING } from "../../../constants"
 
 const Body = () => {
+
+    const logoOnClick = event => {
+        window.location.href = "/"
+    }
+
     return (
         <BodyWrapper>
             <SearchBoxWrapper>
                 <SearchBox placeholder="Search" />
             </SearchBoxWrapper>
-            <Logo src={logoSrc} />
+            <Logo src={logoSrc} onClick={logoOnClick} />
             <CallUs>
                 <span>
                     CALL US NOW
@@ -36,6 +41,9 @@ const Logo = styled.img`
     height: 135px;
     margin: 11px auto;
     display: block;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 const SearchBoxWrapper = styled.div`

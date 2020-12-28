@@ -1,18 +1,22 @@
 import React from "react"
 import styled from "styled-components"
 import HomeBanner from "../images/banner.gif"
+import ProductCarousel from "../components/Carousel"
+
 const HomePage = () => {
     return (
         <HomePageWrapper>
             <Banner src={HomeBanner} />
+            <ProductCarousel title="Featured" type="featured" />
+            <ProductCarousel title="Latest" type="latest" />
         </HomePageWrapper>
     )
 }
 
-const HomePageWrapper = styled.div`
-    font-size: 72px;
+const HomePageWrapper = styled.div`    
     color: #fff;
     text-align: center;
+    padding: 20px 15px 50px;
 `
 
 const Banner = styled.img`
