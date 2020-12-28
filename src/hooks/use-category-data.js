@@ -15,8 +15,10 @@ export const useCategoryData = () => {
                             level
                             magento_id
                             url_path
+                            name
                             childrenMagentoCategory {
                                 name
+                                magento_id
                                 url_path
                                 level
                             }

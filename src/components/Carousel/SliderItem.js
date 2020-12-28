@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faShoppingCart,
-    faChevronDown
+    faShoppingCart    
 } from '@fortawesome/free-solid-svg-icons'
 import DemoImgSrc from "../../images/demo-product.jpg"
 
@@ -12,7 +11,7 @@ const SliderItem = ({ title }) => {
         <SliderItemWrapper>
             <ItemBody>
                 <ItemImage>
-                    <img src={ DemoImgSrc } />
+                    <img src={ DemoImgSrc } alt="demp-product" />
                 </ItemImage>
                 <ItemDetail>
                     <ProductTitle> Product { title.toString() } </ProductTitle>
@@ -22,7 +21,7 @@ const SliderItem = ({ title }) => {
                     </PriceBox>
                     <ProductActions>
                         <AddToCart>
-                            <FontAwesomeIcon className="shopping-cart-icon" icon={faShoppingCart} />  
+                            <FontAwesomeIcon className="shopping-cart-icon" icon={faShoppingCart} />
                             ADD TO CART 
                         </AddToCart>
                     </ProductActions>

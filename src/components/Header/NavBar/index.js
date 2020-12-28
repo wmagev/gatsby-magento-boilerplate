@@ -1,19 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
+import StyledLink from "../../Basic/StyledLink"
+import Dropdown from "./Dropdown"
 import { THEME_SETTING } from "../../../constants"
 import { useCategoryData } from "../../../hooks/use-category-data"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faCaretDown
+} from '@fortawesome/free-solid-svg-icons'
 
 const NavBar = () => {
 
     const categories = useCategoryData()
 
+    const empty = array => !array.length
+
     const renderNavItem = ({ node: item }) => {
         return (
-            <NavBarItem key={item.magento_id}>
-                <Link to={item.url_path}>
-                    {item.name}
-                </Link>
+            <NavBarItem key={ item.magento_id } >
+                <StyledLink color="#fff" to={ item.url_path }>
+                    { item.name }
+                    { !empty(item.childrenMagentoCategory) && <FontAwesomeIcon style={{marginLeft: "6px"}} icon={faCaretDown} />}
+                </StyledLink>                
+                <DropdownWrapper categories={item.childrenMagentoCategory} />
             </NavBarItem>
         )
     }
@@ -38,6 +47,10 @@ const NavBarLinks = styled.ul`
     margin: 0;
 `
 
+const DropdownWrapper = styled(Dropdown)`
+    display: none;    
+`
+
 const NavBarItem = styled.li`
     margin: 0 9px 0 0;
     display: inline-block;
@@ -52,9 +65,8 @@ const NavBarItem = styled.li`
         background: ${THEME_SETTING.HOVER_COLOR};
         cursor: pointer;
     }
-    a {
-        text-decoration: none;
-        color: #fff;
+    &:hover ${DropdownWrapper} {
+        display: block;
     }
 `
 

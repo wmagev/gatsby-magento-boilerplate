@@ -23,7 +23,7 @@ const ProductCarousel = ({ title, type }) => {
             </SliderTitle>
             <Slider {...settings} style={{width: "calc(100% - 30px)", margin: "0 auto"}}>
                 { products.map(item => (
-                    <SliderItem title={item} />
+                    <SliderItem key={item} title={item} />
                 ))}
             </Slider>
         </SliderWrapper>
