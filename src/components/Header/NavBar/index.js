@@ -18,7 +18,7 @@ const NavBar = () => {
     const renderNavItem = ({ node: item }) => {
         return (
             <NavBarItem key={ item.magento_id } >
-                <StyledLink color="#fff" to={ item.url_path }>
+                <StyledLink color="#fff" to={ "/" + item.url_path }>
                     { item.name }
                     { !empty(item.childrenMagentoCategory) && <FontAwesomeIcon style={{marginLeft: "6px"}} icon={faCaretDown} />}
                 </StyledLink>                

@@ -1,36 +1,47 @@
 import React from "react"
 import styled from "styled-components"
+import Img from 'gatsby-image'
 import AddToCart from "../Basic/AddToCart"
-import DemoImgSrc from "../../images/demo-product.jpg"
+import PriceBox from "../Basic/PriceBox"
 
-const SliderItem = ({ title }) => {
+const ProductItem = ({ product }) => {
+
     return (
-        <SliderItemWrapper>
+        <ProductItemWrapper>
             <ItemBody>
                 <ItemImage>
-                    <img src={ DemoImgSrc } alt="demp-product" />
+                { product.image.childImageSharp ? (
+                        <Img fluid={product.image.childImageSharp.fluid} />
+                    ) : (
+                        <div>error</div>
+                )}
                 </ItemImage>
                 <ItemDetail>
-                    <ProductTitle> Product { title.toString() } </ProductTitle>
-                    <PriceBox>
-                        <SpecialPrice>$899.00</SpecialPrice>
-                        <OldPrice>$1199.00</OldPrice>
-                    </PriceBox>
+                    <ProductTitle> { product.name } </ProductTitle>
+                    <PriceBox product={ product } />
                     <ProductActions>
                         <AddToCart />
                     </ProductActions>
                 </ItemDetail>
             </ItemBody>
-        </SliderItemWrapper>
+        </ProductItemWrapper>
     )
 }
 
-const SliderItemWrapper = styled.div`
-    padding: 10px;
-`   
+export default ProductItem
+
+const ProductItemWrapper = styled.div`
+    flex: 0 0 25%;
+    text-align: center;
+    padding: 0 10px 15px 10px;
+    border-left: 1px solid #e3e4e4;
+`
+
 const ItemBody = styled.div`
     background: #fff;
     color: #000;
+    border-top: 1px solid #e3e4e4;
+    padding: 50px 0 10px;    
 `
 
 const ItemDetail = styled.div`
@@ -39,7 +50,7 @@ const ItemDetail = styled.div`
 `
 
 const ItemImage = styled.div`
-
+    border: solid 1px #e8e8e8;
 `
 
 const ProductTitle = styled.strong`
@@ -52,23 +63,6 @@ const ProductTitle = styled.strong`
     -moz-hyphens: auto;
     -ms-hyphens: auto;
 `
-const PriceBox = styled.div`
-    margin: 8px 0 13px;
-    span {
-        padding-right: 3px;
-    }
-`
-
-const SpecialPrice = styled.span`
-    font-size: 18px;
-    color: #212529;
-`
-
-const OldPrice = styled.span`
-    font-size: 14px;
-    color: #999;
-    text-decoration: line-through;
-`
 
 const ProductActions = styled.div`
     width: 130px;
@@ -76,4 +70,3 @@ const ProductActions = styled.div`
     position: relative;
 `
 
-export default SliderItem

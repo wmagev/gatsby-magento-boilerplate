@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-source-magento2",
       options: {
-        graphqlEndpoint: "http://demo-m2.bird.eu/graphql/graphql"
+        graphqlEndpoint: "http://demo-m2.bird.eu/graphql"
       }
     },
     {
@@ -32,6 +32,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-typography`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-fontawesome-css`
   ],  
 }

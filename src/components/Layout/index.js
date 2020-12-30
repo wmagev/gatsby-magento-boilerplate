@@ -5,11 +5,11 @@ import Footer from "../Footer"
 import backgroundImage from "../../images/body-bg.gif"
 import { THEME_SETTING } from "../../constants"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, bgColor }) => {
     return (
         <Container>
             <Header />
-            <ContainerBody>
+            <ContainerBody bgColor={bgColor}>
                 { children }
             </ContainerBody>
             <Footer />
@@ -31,4 +31,6 @@ const Container = styled.div`
 `
 
 const ContainerBody = styled.div`
+    padding: 20px 15px 50px;
+    background: ${props => props.bgColor || "transparent"}
 `

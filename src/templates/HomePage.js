@@ -15,8 +15,7 @@ const HomePage = () => {
 
 const HomePageWrapper = styled.div`    
     color: #fff;
-    text-align: center;
-    padding: 20px 15px 50px;
+    text-align: center;    
 `
 
 const Banner = styled.img`

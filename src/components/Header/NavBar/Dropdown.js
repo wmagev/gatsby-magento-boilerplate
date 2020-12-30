@@ -11,13 +11,13 @@ const Dropdown = ({ categories, className }) => {
 
     const empty = array => !array.length
 
-    const renderSubDropdown = childCategories => {
+    const renderSubDropdown = childCategories => {        
         return (
             <>
             {!empty(childCategories) && (
                 <SubDropdown>
                     { childCategories.map( item => (
-                        <SubDropdownItem key={ item.magento_id } to={ item.url_path }>
+                        <SubDropdownItem key={ item.magento_id } to={"/" + item.url_path}>
                             {item.name}                            
                         </SubDropdownItem>
                     ))}
@@ -33,7 +33,7 @@ const Dropdown = ({ categories, className }) => {
             <DropdownWrapper className={ className } >
                 { categories.map( item => (
                     <DropdownItem key={ item.magento_id } >
-                        <StyledLink color="#5D5D5D" hovercolor="#000" to={ item.url_path } >
+                        <StyledLink color="#5D5D5D" hovercolor="#000" to={ "/" + item.url_path } >
                             { item.name }
                             { !empty(item.childrenMagentoCategory) && <FaCaretRightIcon icon={faCaretRight} />}
                         </StyledLink>
