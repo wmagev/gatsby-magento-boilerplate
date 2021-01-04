@@ -5,7 +5,7 @@ import {
     faDollarSign
 } from '@fortawesome/free-solid-svg-icons'
 
-const Currency = ({ currency, children }) => {
+const Currency = ({ currency, children, className }) => {
     var currencySign = ""
     
     switch (currency) {
@@ -17,7 +17,7 @@ const Currency = ({ currency, children }) => {
     }
 
     return (
-        <span>
+        <span className={ className }>
             {currencySign}
             {children}
         </span>
